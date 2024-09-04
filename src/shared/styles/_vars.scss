@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+// Colors
+$white: var(--white);
+$dark-blue: var(--dark-blue);
+$purple: var(--purple);
+$pink: var(--pink);
+$blue: var(--blue);
+
+// Convert
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+@function em($px) {
+	$result: math.div($px, 16) + em;
+	@return $result;
+}
+
+// Containers
+$container-primary: rem(1440);
+// Containers mixins
+@mixin container-primary($padding-inline: rem(20)) {
+	max-width: $container-primary;
+	padding: 0 $padding-inline;
+	width: 100%;
+	margin: 0 auto;
+}
